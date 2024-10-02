@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avidev Technologies</title>
+    <!-- Google Fonts for attractive styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif; /* Default font for body */
+            background-color: #f0f0f0;
+            overflow-x: hidden;
+        }
+
+        header {
+            height: 100vh;
+            background-image: url('https://th.bing.com/th/id/OIP.gaD8tKP8Q75Jf_NSTQMqzQHaEK?w=290&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        /* Avidev Technologies and Slogan */
+        h1 {
+            font-family: 'Poppins', sans-serif; /* Attractive font for the heading */
+            font-size: 4rem;
+            margin: 0;
+            animation: welcomeAnimation 2s ease-in-out;
+        }
+
+        .slogan {
+            font-family: 'Poppins', sans-serif; /* Matching font for the slogan */
+            font-size: 1.5rem;
+            margin-top: 10px;
+            color: #ddd;
+            letter-spacing: 2px; /* Add some spacing for style */
+        }
+
+        @keyframes welcomeAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Wrapper for sections with no background color */
+        .sections-wrapper {
+            padding: 50px 0;
+        }
+
+        /* Remove background and adjust font colors */
+        .info-section {
+            padding: 100px 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+            color: #111; /* Dark font color for readability */
+            font-family: 'Roboto', sans-serif; /* More readable font for sections */
+        }
+
+        .info-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section titles with different color */
+        .section-title {
+            font-family: 'Poppins', sans-serif; /* Bold font for titles */
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff; /* Blue font color for the section titles */
+        }
+
+        /* Paragraphs with gray font */
+        p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            color: #333; /* Dark gray font color for paragraph text */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Anchor link styling */
+        .explore-link {
+            display: block;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .explore-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Avidev Technologies</h1>
+        <div class="slogan">Code, Create, and Connect</div>
+    </header>
+
+    <!-- Wrapper for the three sections with no background -->
+    <div class="sections-wrapper">
+        <section class="info-section" id="about">
+            <div class="section-title">About Us</div>
+            <p>
+                Avidev Technologies is a forward-thinking web development company, dedicated to providing innovative
+                and efficient web solutions to help businesses thrive in the digital world. Our team of skilled developers
+                and designers work collaboratively to deliver high-quality websites, web apps, and custom software solutions.
+            </p>
+        </section>
+
+        <section class="info-section" id="services">
+            <div class="section-title">Our Services</div>
+            <p>
+                We offer a wide range of web development services including frontend and backend development, responsive
+                design, custom web applications, e-commerce solutions, and much more. Our goal is to bring your vision to life
+                through cutting-edge web technologies.
+            </p>
+        </section>
+
+        <section class="info-section" id="contact">
+            <div class="section-title">Contact Us</div>
+            <p>
+                Ready to take your business to the next level? Contact Avidev Technologies today to get started on your
+                next web development project. We look forward to working with you!
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2024 All Rights Reserved
+    </footer>
+
+    <a href="continue.html" class="explore-link">Continue Exploring Us!</a>
+
+    <script>
+        function isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        function checkVisibility() {
+            const sections = document.querySelectorAll('.info-section');
+            sections.forEach(section => {
+                if (isInViewport(section)) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkVisibility);
+        window.addEventListener('load', checkVisibility);
+    </script>
+
+</body>
+</html>
